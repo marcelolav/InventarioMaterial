@@ -43,9 +43,7 @@ class ServiciosController {
      // Entrega un servicio por numero de id
      public async entregaService(req: Request, res: Response): Promise<void> {
           const { id } = req.params;
-          // const fechaingreso = new Date(req.body.fechaingreso).toLocaleDateString("fr-CA", { year: "numeric", month: "2-digit", day: "2-digit" });
           const fechasalida = new Date(req.body.fechasalida).toLocaleDateString("fr-CA", { year: "numeric", month: "2-digit", day: "2-digit" });
-          // req.body.fechaingreso = fechaingreso;
           req.body.fechasalida = fechasalida;
           await pool.query("UPDATE servicios set ? WHERE idservicios = ?", [req.body, id]);
           res.json({ message: "El servicio ha sido actualizado con éxito!" });

@@ -2,17 +2,13 @@ import { Request, Response } from "express";
 import pool from "../database";
 
 class ProductosController {
-     // Muestra todos los productos de la tabla productos
+     // Muestra todos registros de tabla productos
      public async listaProductos(req: Request, res: Response): Promise<void> {
           const productos = await pool.query("SELECT * FROM productos");
           res.json(productos);
      }
-     // Muestra todos los productos de la tabla productos
-     public async listaProductosRubros(req: Request, res: Response): Promise<void> {
-          const productos = await pool.query("SELECT * FROM productos INNER JOIN rubros ON productos.rubroid = rubros.idrubros");
-          res.json(productos);
-     }
-     // Muestra un solo producto de la tabla productos por ID
+     
+     // Muestra un solo registro de la tabla productos por ID
      public async listaProducto(req: Request, res: Response): Promise<any> {
           const { id } = req.params;
           const productos = await pool.query("SELECT * FROM productos WHERE idproductos = ?", [id]);
@@ -21,7 +17,6 @@ class ProductosController {
           }
           res.status(404).json({ text: "El producto no existe!" });
      }
-
      // Muestra un solo producto de la tabla productos por codigobarra
      public async muestraPorCodigobarra(req: Request, res: Response): Promise<any> {
           const { codigobarra } = req.params;
@@ -31,7 +26,6 @@ class ProductosController {
           }
           res.status(404).json({ text: "El producto no existe!" });
      }
-
      // Agrega un producto
      public async agregaProducto(req: Request, res: Response): Promise<void> {
           const result = await pool.query("INSERT INTO productos set ?", [req.body]);
@@ -50,9 +44,13 @@ class ProductosController {
           res.json({ message: "El producto ha sido eliminado con éxito!" });
      }
      // Actualiza la existencia de un producto por numero de id
+     // uso:   actualizaExistencia(id, cantidadnueva, operacion)
+     // Donde:  id es el id del producto
+     //         cantidadNueva: es la cantidad de un producto a descontar o agregar
+     //         operacion: puede ser 'compra' o 'venta'  compra agrega y ventas descuenta
      public async actualizaExistencia(req: Request, res: Response): Promise<void> {
           const { id, cantidadNueva, operacion } = req.params;
-          const regCant = await pool.query(`SELECT * FROM vw_existencias WHERE idproductos = ${id}`);
+          const regCant = await pool.query(`SELECT * FROM productos WHERE idproductos = ${id}`);
           const ex_anterior = regCant[0].existencia;
           if (operacion === "venta") {
                // Venta restar de stock

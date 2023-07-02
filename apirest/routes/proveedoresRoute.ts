@@ -1,6 +1,6 @@
 import express, { Router } from "express";
 
-import { proveedoresController } from "../controladores/proveedoresController";
+import { proveedoresController } from "../controller/proveedoresController";
 
 class ProveedoresRoute {
      router: Router = Router();
