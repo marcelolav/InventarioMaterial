@@ -1,0 +1,7 @@
+{
+    "name": "API Service MySQL Inventario",
+    "version": "0.1.0",
+    "description": "Documentación sobre la API que conecta a MySQL",
+    "title": "Documentación sobre la API",
+    "url" : "https://localhost:3000/"
+  }
