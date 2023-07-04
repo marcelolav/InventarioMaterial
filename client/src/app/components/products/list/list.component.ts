@@ -4,8 +4,9 @@ import { ProductsService } from 'src/app/services/products.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
-	selector: 'app-list',
+	selector: 'app-lista-productos',
 	templateUrl: './list.component.html',
 	styleUrls: ['./list.component.css'],
 })
@@ -24,12 +25,12 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort, { static: true }) sort!: MatSort;
 
-	constructor(private productsService: ProductsService) {}
+	constructor(
+		private productsService: ProductsService,
+		private _snackBar: MatSnackBar
+	) {}
 	ngOnInit() {
-		this.productsService.getProducts().subscribe((res) => {
-			this.dataSource.data = res;
-			this.dataSource.sort = this.sort;
-		});
+		this.getproducts();
 	}
 
 	ngAfterViewInit() {
@@ -42,10 +43,38 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 		this.dataSource.filter = filterValue.trim().toLowerCase();
 	}
 
-	editar(elemento: any) {
-		console.log(elemento);
+	getproducts() {
+		this.productsService.getProducts().subscribe((res) => {
+			this.dataSource.data = res;
+			this.dataSource.sort = this.sort;
+		});
 	}
-	eliminar(elemento: any) {
+	eliminar(elemento: Producto) {
+		if (
+			confirm(
+				'¿Desea eliminar el Producto ' +
+					elemento.nombreproducto +
+					'?'
+			)
+		) {
+			console.log(elemento);
+			this.productsService
+				.deleteProduct(elemento.idproductos)
+				.subscribe((res) => {
+					this._snackBar.open(
+						'Producto eliminado exitosamente',
+						'Cerrar',
+						{
+							horizontalPosition: 'center',
+							verticalPosition: 'bottom',
+							duration: 3000,
+						}
+					);
+					this.getproducts();
+				});
+		}
+	}
+	editar(elemento: any) {
 		console.log(elemento);
 	}
 }
