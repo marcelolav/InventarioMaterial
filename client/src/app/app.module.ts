@@ -14,6 +14,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 // Componentes generados
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './components/home/home.component';
@@ -42,6 +44,8 @@ import { ProductAddModifyComponent } from './components/products/add-modify/add-
 		MatTableModule,
 		MatInputModule,
 		MatFormFieldModule,
+		MatPaginatorModule,
+		MatSortModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

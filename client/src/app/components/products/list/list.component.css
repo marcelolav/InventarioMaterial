@@ -5,5 +5,11 @@ table {
 
 .mat-mdc-form-field {
     font-size: 14px;
-    width: 100%;
+    width: 50%;
+    padding: 10px;
 }
+
+/* td,
+th {
+    width: 25%;
+} */
