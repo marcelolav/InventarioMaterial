@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Angular Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -17,12 +18,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 // Componentes generados
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ProductListComponent } from './components/products/list/list.component';
-import { ProductAddModifyComponent } from './components/products/add-modify/add-modify.component';
+// import { ProductAddModifyComponent } from './components/products/add-modify/add-modify.component';
 
 @NgModule({
 	declarations: [
@@ -31,12 +33,12 @@ import { ProductAddModifyComponent } from './components/products/add-modify/add-
 		HomeComponent,
 		ErrorComponent,
 		ProductListComponent,
-		ProductAddModifyComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,
 		HttpClientModule,
 		AppRoutingModule,
+		FormsModule,
 		MatToolbarModule,
 		MatIconModule,
 		MatMenuModule,
@@ -48,6 +50,7 @@ import { ProductAddModifyComponent } from './components/products/add-modify/add-
 		MatPaginatorModule,
 		MatSortModule,
 		MatSnackBarModule,
+		MatDialogModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

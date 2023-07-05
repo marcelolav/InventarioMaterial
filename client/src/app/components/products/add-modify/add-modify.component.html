@@ -1,7 +1,41 @@
-<div>
-	<p>
-		Aca va el formulario de altas y modificaciones que es este mismo ver
-		inputs
-	</p>
+<h1 mat-dialog-title>Alta / Modificación de Producto</h1>
+<div mat-dialog-content>
+	<mat-form-field>
+		<input
+			matInput
+			class="nombreproducto"
+			[(ngModel)]="data.nombreproducto"
+			type="text"
+			placeholder="Ingrese el Nombre del producto"
+		/>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input
+			matInput
+			[(ngModel)]="data.descripcion"
+			type="text"
+			placeholder="Ingrese la descripción del producto"
+		/>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input
+			matInput
+			[(ngModel)]="data.precio"
+			type="text"
+			placeholder="Ingrese el Precio del producto"
+		/>
+	</mat-form-field>
 </div>
-<app-lista-productos></app-lista-productos>
+<div mat-dialog-actions>
+	<button
+		mat-raised-button
+		mat-dialog-close
+		color="primary"
+		(click)="guardarDatos(data)"
+	>
+		Guardar
+	</button>
+	<button mat-raised-button mat-dialog-close color="warn">Cerrar</button>
+</div>

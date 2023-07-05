@@ -1,5 +1,5 @@
 export interface Producto {
-	idproductos: number;
+	idproductos?: number;
 	codigobarra: string;
 	nombreproducto: string;
 	descripcion: string;
@@ -8,6 +8,4 @@ export interface Producto {
 	existencia: number;
 	preciorefdolar: number;
 	rubroid: number;
-	idrubro: number;
-	nombrerubro: string;
 }

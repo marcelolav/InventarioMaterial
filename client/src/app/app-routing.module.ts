@@ -8,8 +8,7 @@ import { ProductAddModifyComponent } from './components/products/add-modify/add-
 const routes: Routes = [
 	{ path: 'home', component: HomeComponent },
 	{ path: 'productlist', component: ProductListComponent },
-	{ path: 'productabm', component: ProductAddModifyComponent },
-
+	{ path: 'productos/editar/:id', component: ProductAddModifyComponent },
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{ path: '**', component: ErrorComponent },
 ];
