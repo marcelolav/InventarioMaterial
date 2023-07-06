@@ -48,10 +48,10 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 			rubroid: 0,
 		};
 		this.dialogConfig = {
-			maxWidth: '80vw',
-			maxHeight: '100vh',
-			height: '70%',
-			width: '70%',
+			maxWidth: '60vw',
+			maxHeight: '45vh',
+			height: '100%',
+			width: '100%',
 		};
 	}
 	ngOnInit() {
@@ -97,29 +97,27 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 				});
 		}
 	}
-	editar(elemento: Producto) {
-		console.log(this.dialogConfig);
+	editar(id: number, elemento: Producto) {
 		this.dialogConfig.data = elemento;
 		const dialogRef = this.dialog.open(
 			ProductAddModifyComponent,
 			this.dialogConfig
 		);
-
 		dialogRef.afterClosed().subscribe((result) => {
-			console.log('Dialogo cerrado');
 			this.producto = result.data;
-			console.log(this.producto);
+			this.productsService.updateProduct(id, elemento);
 		});
 	}
 
 	addProducto() {
-		const dialogRef = this.dialog.open(ProductAddModifyComponent, {
-			data: this.producto,
-		});
-
+		this.dialogConfig.data = {};
+		const dialogRef = this.dialog.open(
+			ProductAddModifyComponent,
+			this.dialogConfig
+		);
 		dialogRef.afterClosed().subscribe((result) => {
-			console.log('The dialog was closed');
-			//this.animal = result;
+			console.log('Desde listcomponent=>', result);
+			this.getproducts();
 		});
 	}
 }

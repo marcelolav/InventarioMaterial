@@ -1,35 +1,58 @@
-<h1 mat-dialog-title>Alta / Modificación de Producto</h1>
+<h1 mat-dialog-title>Producto</h1>
 <div mat-dialog-content>
-	<mat-form-field>
-		<input
-			matInput
-			class="nombreproducto"
-			[(ngModel)]="data.nombreproducto"
-			type="text"
-			placeholder="Ingrese el Nombre del producto"
-		/>
-	</mat-form-field>
-
-	<mat-form-field>
-		<input
-			matInput
-			[(ngModel)]="data.descripcion"
-			type="text"
-			placeholder="Ingrese la descripción del producto"
-		/>
-	</mat-form-field>
-
-	<mat-form-field>
-		<input
-			matInput
-			[(ngModel)]="data.precio"
-			type="text"
-			placeholder="Ingrese el Precio del producto"
-		/>
-	</mat-form-field>
+	<div layout="row" layout-align="center end">
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Código de Barras del producto</mat-label>
+			<input matInput [(ngModel)]="data.codigobarra" type="text" />
+		</mat-form-field>
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Rubro</mat-label>
+			<mat-select [(ngModel)]="data.rubroid">
+				<mat-option
+					[value]="rubro.idrubros"
+					*ngFor="let rubro of listaRubros"
+				>
+					{{ rubro.nombrerubro }}
+				</mat-option>
+			</mat-select>
+		</mat-form-field>
+	</div>
+	<div layout="row" layout-align="center end">
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Nombre del Producto</mat-label>
+			<input matInput [(ngModel)]="data.nombreproducto" type="text" />
+		</mat-form-field>
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Descripción del Producto</mat-label>
+			<input matInput [(ngModel)]="data.descripcion" type="text" />
+		</mat-form-field>
+	</div>
+	<div layout="row" layout-align="center end">
+		<mat-form-field [style.width.%]="25">
+			<mat-label>Precio de Venta</mat-label>
+			<input matInput [(ngModel)]="data.precio" type="number" />
+		</mat-form-field>
+		<mat-form-field [style.width.%]="25">
+			<mat-label>Precio de Compra</mat-label>
+			<input matInput [(ngModel)]="data.preciocompra" type="number" />
+		</mat-form-field>
+		<mat-form-field [style.width.%]="25">
+			<mat-label>Existencia</mat-label>
+			<input matInput [(ngModel)]="data.existencia" type="number" />
+		</mat-form-field>
+		<mat-form-field [style.width.%]="25">
+			<mat-label>Precio Refer. Dolares</mat-label>
+			<input
+				matInput
+				[(ngModel)]="data.preciorefdolar"
+				type="number"
+			/>
+		</mat-form-field>
+	</div>
 </div>
 <div mat-dialog-actions>
 	<button
+		[style.width.%]="49"
 		mat-raised-button
 		mat-dialog-close
 		color="primary"
@@ -37,5 +60,12 @@
 	>
 		Guardar
 	</button>
-	<button mat-raised-button mat-dialog-close color="warn">Cerrar</button>
+	<button
+		mat-raised-button
+		mat-dialog-close
+		color="warn"
+		[style.width.%]="49"
+	>
+		Cerrar
+	</button>
 </div>

@@ -1,5 +1,6 @@
-.nombreproducto {
-    padding: 15px;
-    margin: 15px;
-    width: 50%;
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    max-width: 600px;
 }
