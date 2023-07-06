@@ -5,7 +5,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ProductAddModifyComponent } from '../add-modify/add-modify.component';
 @Component({
@@ -34,7 +33,6 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 	constructor(
 		private productsService: ProductsService,
 		private _snackBar: MatSnackBar,
-		private router: Router,
 		public dialog: MatDialog
 	) {
 		this.producto = {

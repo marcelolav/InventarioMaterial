@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
 import { Cliente } from 'src/app/models/cliente';
+import { ClientesService } from 'src/app/services/clientes.service';
 @Component({
 	selector: 'dialogo-clientes',
 	templateUrl: './add-modify.component.html',
@@ -29,13 +30,32 @@ import { Cliente } from 'src/app/models/cliente';
 		CommonModule,
 	],
 })
-export class ClientAddModifyComponent {
+export class ClientAddModifyComponent implements OnInit {
 	constructor(
 		public dialogRef: MatDialogRef<ClientAddModifyComponent>,
+		public cliserv: ClientesService,
 		@Inject(MAT_DIALOG_DATA) public data: Cliente
 	) {}
+	ngOnInit(): void {
+		throw new Error('Method not implemented.');
+	}
 
 	onNoClick(): void {
 		this.dialogRef.close();
+	}
+	guardarDatos(cliente: Cliente) {
+		if (cliente.idclientes !== undefined) {
+			console.log('es modificacion');
+			this.cliserv
+				.updateCliente(cliente.idclientes, cliente)
+				.subscribe((res) => {
+					console.log(res);
+				});
+		} else {
+			console.log('Es alta!!!');
+			this.cliserv.addCliente(cliente).subscribe((res) => {
+				console.log(res);
+			});
+		}
 	}
 }

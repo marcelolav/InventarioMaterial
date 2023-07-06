@@ -53,7 +53,6 @@ export class ProductAddModifyComponent implements OnInit {
 	}
 
 	guardarDatos(producto: Producto) {
-		console.log('Producto a guardar=>', producto);
 		if (producto.idproductos !== undefined) {
 			console.log('es modificacion');
 			this.prodserv

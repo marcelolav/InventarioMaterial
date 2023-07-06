@@ -1,1 +1,53 @@
-<p>add-modify works!</p>
+<h1 mat-dialog-title>Producto</h1>
+<div mat-dialog-content>
+	<div layout="row" layout-align="center end">
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Nombre / Razón Social</mat-label>
+			<input matInput [(ngModel)]="data.nombrecliente" type="text" />
+		</mat-form-field>
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Dirección</mat-label>
+			<input matInput [(ngModel)]="data.direccion" type="text" />
+		</mat-form-field>
+	</div>
+	<div layout="row" layout-align="center end">
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Teléfono</mat-label>
+			<input matInput [(ngModel)]="data.telefono" type="text" />
+		</mat-form-field>
+		<mat-form-field [style.width.%]="50">
+			<mat-label>C.U.I.T.</mat-label>
+			<input matInput [(ngModel)]="data.cuit" type="text" />
+		</mat-form-field>
+	</div>
+	<div layout="row" layout-align="center end">
+		<mat-form-field [style.width.%]="100">
+			<mat-label>Observaciones</mat-label>
+			<textarea
+				matInput
+				placeholder="Observaciones"
+				[(ngModel)]="data.observaciones"
+			></textarea>
+			<!-- <input matInput [(ngModel)]="data.precio" type="number" /> -->
+		</mat-form-field>
+	</div>
+</div>
+<div mat-dialog-actions>
+	<button
+		[style.width.%]="49"
+		mat-raised-button
+		mat-dialog-close
+		color="primary"
+		(click)="guardarDatos(data)"
+	>
+		Guardar
+	</button>
+	<button
+		mat-raised-button
+		mat-dialog-close
+		color="warn"
+		[style.width.%]="49"
+	>
+		Cerrar
+	</button>
+</div>
