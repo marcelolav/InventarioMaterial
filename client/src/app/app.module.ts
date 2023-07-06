@@ -25,6 +25,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ProductListComponent } from './components/products/list/list.component';
 import { ProductDisplayQueryComponent } from './components/products/display-query/display-query.component';
+import { ClientListComponent } from './components/clients/list/list.component';
+import { ClientDisplayQueryComponent } from './components/clients/display-query/display-query.component';
 // import { ProductAddModifyComponent } from './components/products/add-modify/add-modify.component';
 
 @NgModule({
@@ -35,6 +37,8 @@ import { ProductDisplayQueryComponent } from './components/products/display-quer
 		ErrorComponent,
 		ProductListComponent,
 		ProductDisplayQueryComponent,
+		ClientListComponent,
+		ClientDisplayQueryComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,
