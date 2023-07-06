@@ -26,6 +26,13 @@ class ProductosController {
           }
           res.status(404).json({ text: "El producto no existe!" });
      }
+
+     // Consulta productos con rubro completo vw_productosyrubros
+     public async listaProdyRub(req: Request, res: Response): Promise<void> {
+          const productos = await pool.query("SELECT * FROM vw_productosyrubros");
+          res.json(productos);
+     }
+
      // Agrega un producto
      public async agregaProducto(req: Request, res: Response): Promise<void> {
           console.log("Entra en agregar nuevo producto");

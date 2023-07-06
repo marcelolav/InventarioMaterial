@@ -44,6 +44,13 @@ class ProductosController {
             res.status(404).json({ text: "El producto no existe!" });
         });
     }
+    // Consulta productos con rubro completo vw_productosyrubros
+    listaProdyRub(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const productos = yield database_1.default.query("SELECT * FROM vw_productosyrubros");
+            res.json(productos);
+        });
+    }
     // Agrega un producto
     agregaProducto(req, res) {
         return __awaiter(this, void 0, void 0, function* () {

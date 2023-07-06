@@ -11,11 +11,12 @@ class ProductosRoutes {
 
      config() {
           this.router.get("/", productosController.listaProductos);
-          this.router.get("/:id", productosController.listaProducto);
+          this.router.get("/listacompleta/", productosController.listaProdyRub);
           this.router.get("/cb/:codigobarra", productosController.muestraPorCodigobarra);
+          this.router.get("/actext/:id/:cantidadNueva/:operacion", productosController.actualizaExistencia);
+          this.router.get("/:id", productosController.listaProducto);
           this.router.put("/:id", productosController.actualizaProducto);
           this.router.post("/", productosController.agregaProducto);
-          this.router.get("/actext/:id/:cantidadNueva/:operacion", productosController.actualizaExistencia);
           this.router.delete("/:id", productosController.eliminaProducto);
      }
 }

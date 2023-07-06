@@ -24,6 +24,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ProductListComponent } from './components/products/list/list.component';
+import { ProductDisplayQueryComponent } from './components/products/display-query/display-query.component';
 // import { ProductAddModifyComponent } from './components/products/add-modify/add-modify.component';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { ProductListComponent } from './components/products/list/list.component'
 		HomeComponent,
 		ErrorComponent,
 		ProductListComponent,
+		ProductDisplayQueryComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,
