@@ -26,7 +26,15 @@
 			</button>
 		</mat-menu>
 		<button mat-menu-item>Rubros</button>
-		<button mat-menu-item>Clientes</button>
+		<button mat-menu-item [matMenuTriggerFor]="clientes">Clientes</button>
+		<mat-menu #clientes="matMenu">
+			<button mat-menu-item routerLink="clientlist">
+				Alta/Baja/Modificación
+			</button>
+			<button mat-menu-item routerLink="clientquery">
+				Consulta a Lista de Precios
+			</button>
+		</mat-menu>
 		<button mat-menu-item>Proveedores</button>
 	</mat-menu>
 </mat-toolbar>

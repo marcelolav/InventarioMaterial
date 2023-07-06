@@ -29,9 +29,6 @@ export class ProductsService {
 	}
 
 	updateProduct(id: number, updatedProducto: Producto): Observable<any> {
-		console.log(
-			'update por put de: ' + id + ' producto: ' + updatedProducto
-		);
 		return this.http.put(`${this.APIURL}/${id}`, updatedProducto);
 	}
 
