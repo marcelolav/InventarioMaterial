@@ -1,0 +1,22 @@
+.example-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 120px;
+}
+h2 {
+    font-size: larger;
+    width: 100px;
+    height: fit-content;
+
+}
+h4 {
+    padding: 35px;
+    align-content: center;
+}
+h3 {
+    margin-left: 54px;
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font: 300;
+}
