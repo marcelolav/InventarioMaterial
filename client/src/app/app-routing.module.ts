@@ -8,15 +8,30 @@ import { ProductDisplayQueryComponent } from './components/products/display-quer
 import { ClientListComponent } from './components/clients/list/list.component';
 import { ClientAddModifyComponent } from './components/clients/add-modify/add-modify.component';
 import { ClientDisplayQueryComponent } from './components/clients/display-query/display-query.component';
+import { RubrosListComponent } from './components/rubros/list/list.component';
+import { RubrosDisplayQueryComponent } from './components/rubros/display-query/display-query.component';
+import { RubrosAddModifyComponent } from './components/rubros/add-modify/add-modify.component';
+import { ProveedoresListComponent } from './components/proveedores/list/list.component';
+import { ProveedoresDisplayQueryComponent } from './components/proveedores/display-query/display-query.component';
+import { ProveedoresAddModifyComponent } from './components/proveedores/add-modify/add-modify.component';
 
 const routes: Routes = [
 	{ path: 'home', component: HomeComponent },
 	{ path: 'productlist', component: ProductListComponent },
 	{ path: 'productquery', component: ProductDisplayQueryComponent },
 	{ path: 'productos/editar/:id', component: ProductAddModifyComponent },
-	{ path: 'clientlist', component: ClientListComponent },
-	{ path: 'clientquery', component: ClientDisplayQueryComponent },
+	{ path: 'clienteslist', component: ClientListComponent },
+	{ path: 'clientesquery', component: ClientDisplayQueryComponent },
 	{ path: 'clientes/editar/:id', component: ClientAddModifyComponent },
+	{ path: 'rubroslist', component: RubrosListComponent },
+	{ path: 'rubrosquery', component: RubrosDisplayQueryComponent },
+	{ path: 'rubros/editar/:id', component: RubrosAddModifyComponent },
+	{ path: 'proveedoreslist', component: ProveedoresListComponent },
+	{ path: 'proveedoresquery', component: ProveedoresDisplayQueryComponent },
+	{
+		path: 'proveedores/editar/:id',
+		component: ProveedoresAddModifyComponent,
+	},
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{ path: '**', component: ErrorComponent },
 ];

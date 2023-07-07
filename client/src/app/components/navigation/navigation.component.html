@@ -25,16 +25,34 @@
 				Consulta a Lista de Precios
 			</button>
 		</mat-menu>
-		<button mat-menu-item>Rubros</button>
-		<button mat-menu-item [matMenuTriggerFor]="clientes">Clientes</button>
-		<mat-menu #clientes="matMenu">
-			<button mat-menu-item routerLink="clientlist">
+		<button mat-menu-item [matMenuTriggerFor]="rubros">Rubros</button>
+		<mat-menu #rubros="matMenu">
+			<button mat-menu-item routerLink="rubroslist">
 				Alta/Baja/Modificación
 			</button>
-			<button mat-menu-item routerLink="clientquery">
+			<button mat-menu-item routerLink="rubrosquery">
+				Consulta a Rubros
+			</button>
+		</mat-menu>
+		<button mat-menu-item [matMenuTriggerFor]="clientes">Clientes</button>
+		<mat-menu #clientes="matMenu">
+			<button mat-menu-item routerLink="clienteslist">
+				Alta/Baja/Modificación
+			</button>
+			<button mat-menu-item routerLink="clientesquery">
 				Consulta a Lista de Precios
 			</button>
 		</mat-menu>
-		<button mat-menu-item>Proveedores</button>
+		<button mat-menu-item [matMenuTriggerFor]="proveedores">
+			Proveedores
+		</button>
+		<mat-menu #proveedores="matMenu">
+			<button mat-menu-item routerLink="proveedoreslist">
+				Alta/Baja/Modificación
+			</button>
+			<button mat-menu-item routerLink="proveedoresquery">
+				Consulta a Proveedores
+			</button>
+		</mat-menu>
 	</mat-menu>
 </mat-toolbar>

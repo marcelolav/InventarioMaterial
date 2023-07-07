@@ -27,6 +27,12 @@ import { ProductListComponent } from './components/products/list/list.component'
 import { ProductDisplayQueryComponent } from './components/products/display-query/display-query.component';
 import { ClientListComponent } from './components/clients/list/list.component';
 import { ClientDisplayQueryComponent } from './components/clients/display-query/display-query.component';
+import { RubrosAddModifyComponent } from './components/rubros/add-modify/add-modify.component';
+import { RubrosDisplayQueryComponent } from './components/rubros/display-query/display-query.component';
+import { RubrosListComponent } from './components/rubros/list/list.component';
+import { ProveedoresAddModifyComponent } from './components/proveedores/add-modify/add-modify.component';
+import { ProveedoresDisplayQueryComponent } from './components/proveedores/display-query/display-query.component';
+import { ProveedoresListComponent } from './components/proveedores/list/list.component';
 // import { ProductAddModifyComponent } from './components/products/add-modify/add-modify.component';
 
 @NgModule({
@@ -39,6 +45,12 @@ import { ClientDisplayQueryComponent } from './components/clients/display-query/
 		ProductDisplayQueryComponent,
 		ClientListComponent,
 		ClientDisplayQueryComponent,
+		RubrosAddModifyComponent,
+		RubrosDisplayQueryComponent,
+		RubrosListComponent,
+		ProveedoresAddModifyComponent,
+		ProveedoresDisplayQueryComponent,
+		ProveedoresListComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,
