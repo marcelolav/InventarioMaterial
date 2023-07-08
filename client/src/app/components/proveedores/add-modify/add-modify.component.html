@@ -1,1 +1,46 @@
-<p>prov add modify</p>
+<h1 mat-dialog-title>Proveedores</h1>
+<div mat-dialog-content>
+	<div layout="row" layout-align="center end">
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Nombre / Razón Social</mat-label>
+			<input matInput [(ngModel)]="data.nombre" type="text" />
+		</mat-form-field>
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Referencias</mat-label>
+			<input matInput [(ngModel)]="data.referencia" type="text" />
+		</mat-form-field>
+	</div>
+	<div layout="row" layout-align="center end">
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Fecha Ultima Compra</mat-label>
+			<input
+				matInput
+				[(ngModel)]="data.fechaultimacompra"
+				type="date"
+			/>
+		</mat-form-field>
+		<mat-form-field [style.width.%]="50">
+			<mat-label>Importe Total Compras</mat-label>
+			<input matInput [(ngModel)]="data.totalcompras" type="number" />
+		</mat-form-field>
+	</div>
+</div>
+<div mat-dialog-actions>
+	<button
+		[style.width.%]="49"
+		mat-raised-button
+		mat-dialog-close
+		color="primary"
+		(click)="guardarDatos(data)"
+	>
+		Guardar
+	</button>
+	<button
+		mat-raised-button
+		mat-dialog-close
+		color="warn"
+		[style.width.%]="49"
+	>
+		Cerrar
+	</button>
+</div>

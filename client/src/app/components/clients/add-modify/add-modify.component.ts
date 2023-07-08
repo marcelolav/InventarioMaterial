@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import {
@@ -30,15 +30,12 @@ import { ClientesService } from 'src/app/services/clientes.service';
 		CommonModule,
 	],
 })
-export class ClientAddModifyComponent implements OnInit {
+export class ClientAddModifyComponent {
 	constructor(
 		public dialogRef: MatDialogRef<ClientAddModifyComponent>,
 		public cliserv: ClientesService,
 		@Inject(MAT_DIALOG_DATA) public data: Cliente
 	) {}
-	ngOnInit(): void {
-		throw new Error('Method not implemented.');
-	}
 
 	onNoClick(): void {
 		this.dialogRef.close();

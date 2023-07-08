@@ -6,7 +6,7 @@ import { Cliente } from 'src/app/models/cliente';
 import { ClientesService } from 'src/app/services/clientes.service';
 
 @Component({
-	selector: 'app-display-query',
+	selector: 'clientes-display-query',
 	templateUrl: './display-query.component.html',
 	styleUrls: ['./display-query.component.css'],
 })
