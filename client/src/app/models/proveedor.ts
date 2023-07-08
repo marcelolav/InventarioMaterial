@@ -1,5 +1,5 @@
 export interface Proveedor {
-	idproveedores: number;
+	idproveedores?: number;
 	nombre: string;
 	referencia: string;
 	fechaultimacompra: Date;

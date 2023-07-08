@@ -42,14 +42,12 @@ export class ProveedoresAddModifyComponent {
 	}
 	guardarDatos(proveedor: Proveedor) {
 		if (proveedor.idproveedores !== undefined) {
-			console.log('es modificacion');
 			this.provserv
 				.updateProveedor(proveedor.idproveedores, proveedor)
 				.subscribe((res) => {
 					console.log(res);
 				});
 		} else {
-			console.log('Es alta!!!');
 			this.provserv.addProveedor(proveedor).subscribe((res) => {
 				console.log(res);
 			});

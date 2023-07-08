@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+
+mat-form-field {
+    font-size: 16px;
+    width: 50%;
+    padding: 15px;
+    text-align: center;
+}
+
+.busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.demo-button-container {
+    padding: 16px;
+    margin-left: 8px;
+
+}

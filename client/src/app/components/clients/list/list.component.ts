@@ -8,7 +8,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ClientAddModifyComponent } from '../add-modify/add-modify.component';
 @Component({
-	selector: 'app-list',
+	selector: 'clientes-app-list',
 	templateUrl: './list.component.html',
 	styleUrls: ['./list.component.css'],
 })
