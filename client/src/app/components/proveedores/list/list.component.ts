@@ -64,11 +64,13 @@ export class ProveedoresListComponent implements OnInit, AfterViewInit {
 		this.dataSource.filter = filterValue.trim().toLowerCase();
 	}
 	editarProveedor(id: number, elemento: Proveedor) {
-		console.log(elemento);
-		const fecha1 = elemento.fechaultimacompra;
-		console.log(fecha1.getDay);
+		const fechacambiada = new Date(elemento.fechaultimacompra);
+
+		elemento.fechaultimacompra = fechacambiada;
+		console.log(elemento.fechaultimacompra);
 
 		this.dialogConfig.data = elemento;
+		this.dialogConfig.data.fechaultimacompra = fechacambiada;
 		const dialogRef = this.dialog.open(
 			ProveedoresAddModifyComponent,
 			this.dialogConfig
