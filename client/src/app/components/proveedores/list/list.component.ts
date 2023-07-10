@@ -7,7 +7,7 @@ import { MatSort } from '@angular/material/sort';
 import { ProveedoresAddModifyComponent } from '../add-modify/add-modify.component';
 import { Proveedor } from 'src/app/models/proveedor';
 import { ProveedoresService } from 'src/app/services/proveedores.service';
-
+import { DialogSiNoComponent } from '../../shared/dialog-si-no.component';
 @Component({
 	selector: 'proveedores-app-list',
 	templateUrl: './list.component.html',
@@ -90,25 +90,32 @@ export class ProveedoresListComponent implements OnInit, AfterViewInit {
 		dialogRef.afterClosed().subscribe((result) => {
 			this.getProveedores();
 		});
+		this.getProveedores();
 	}
 	eliminarProveedor(elemento: Proveedor) {
-		if (
-			confirm('¿Desea eliminar el Proveedor ' + elemento.nombre + '?')
-		) {
-			this.proveedoresService
-				.deleteProveedor(elemento.idproveedores!)
-				.subscribe((res) => {
-					this._snackBar.open(
-						'Proveedor eliminado exitosamente',
-						'Cerrar',
-						{
-							horizontalPosition: 'center',
-							verticalPosition: 'bottom',
-							duration: 3000,
-						}
-					);
-					this.getProveedores();
-				});
-		}
+		this.dialog
+			.open(DialogSiNoComponent, {
+				width: '350px',
+				data: '¿Está seguro de eliminar el proveedor?',
+			})
+			.afterClosed()
+			.subscribe((res) => {
+				if (res) {
+					this.proveedoresService
+						.deleteProveedor(elemento.idproveedores!)
+						.subscribe((res) => {
+							this._snackBar.open(
+								'Proveedor eliminado exitosamente',
+								'Cerrar',
+								{
+									horizontalPosition: 'center',
+									verticalPosition: 'bottom',
+									duration: 3500,
+								}
+							);
+							this.getProveedores();
+						});
+				}
+			});
 	}
 }

@@ -32,6 +32,7 @@ import { RubrosDisplayQueryComponent } from './components/rubros/display-query/d
 import { RubrosListComponent } from './components/rubros/list/list.component';
 import { ProveedoresDisplayQueryComponent } from './components/proveedores/display-query/display-query.component';
 import { ProveedoresListComponent } from './components/proveedores/list/list.component';
+import { DialogSiNoComponent } from './components/shared/dialog-si-no.component';
 
 @NgModule({
 	declarations: [
@@ -48,6 +49,7 @@ import { ProveedoresListComponent } from './components/proveedores/list/list.com
 		RubrosListComponent,
 		ProveedoresDisplayQueryComponent,
 		ProveedoresListComponent,
+		DialogSiNoComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,
