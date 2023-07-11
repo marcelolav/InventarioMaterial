@@ -20,36 +20,25 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 // Componentes generados
-import { NavigationComponent } from './components/navigation/navigation.component';
-import { HomeComponent } from './components/home/home.component';
-import { ErrorComponent } from './components/error/error.component';
-import { ProductListComponent } from './components/products/list/list.component';
-import { ProductDisplayQueryComponent } from './components/products/display-query/display-query.component';
-import { ClientListComponent } from './components/clients/list/list.component';
-import { ClientDisplayQueryComponent } from './components/clients/display-query/display-query.component';
-import { RubrosAddModifyComponent } from './components/rubros/add-modify/add-modify.component';
-import { RubrosDisplayQueryComponent } from './components/rubros/display-query/display-query.component';
-import { RubrosListComponent } from './components/rubros/list/list.component';
-import { ProveedoresDisplayQueryComponent } from './components/proveedores/display-query/display-query.component';
-import { ProveedoresListComponent } from './components/proveedores/list/list.component';
-import { DialogSiNoComponent } from './components/shared/dialog-si-no.component';
+import * as Component from './components';
+import * as Services from './services';
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		NavigationComponent,
-		HomeComponent,
-		ErrorComponent,
-		ProductListComponent,
-		ProductDisplayQueryComponent,
-		ClientListComponent,
-		ClientDisplayQueryComponent,
-		RubrosAddModifyComponent,
-		RubrosDisplayQueryComponent,
-		RubrosListComponent,
-		ProveedoresDisplayQueryComponent,
-		ProveedoresListComponent,
-		DialogSiNoComponent,
+		Component.NavigationComponent,
+		Component.HomeComponent,
+		Component.ErrorComponent,
+		Component.ProductListComponent,
+		Component.ProductDisplayQueryComponent,
+		Component.ClientListComponent,
+		Component.ClientDisplayQueryComponent,
+		// Component.RubrosAddModifyComponent,
+		Component.RubrosDisplayQueryComponent,
+		Component.RubrosListComponent,
+		Component.ProveedoresDisplayQueryComponent,
+		Component.ProveedoresListComponent,
+		Component.DialogSiNoComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,
@@ -69,7 +58,12 @@ import { DialogSiNoComponent } from './components/shared/dialog-si-no.component'
 		MatSnackBarModule,
 		MatDialogModule,
 	],
-	providers: [],
+	providers: [
+		Services.ClientesService,
+		Services.ProveedoresService,
+		Services.ProductsService,
+		Services.RubrosService,
+	],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}
