@@ -74,7 +74,6 @@ class VentasController {
           await pool.query("UPDATE ventasdetalle set ? WHERE idventasdetalle = ?", [req.body, id]);
           res.json({ message: "El registro de ventas ha sido actualizado!" });
      }
-     
 
      // Calcular el total de una venta pasando comprobante como dato.
 
@@ -85,6 +84,11 @@ class VentasController {
                return res.json(totalVenta);
           }
           res.status(404).json({ text: "No existe el comprobante referenciado!" });
+     }
+     // Para el listado de las ventas con toda la info
+     public async listadoventascondetalle(req: Request, res: Response): Promise<any> {
+          const ventasdetalles = await pool.query("SELECT * FROM vw_ventascondetalles");
+          return res.json(ventasdetalles);
      }
 }
 

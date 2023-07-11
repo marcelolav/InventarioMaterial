@@ -23,6 +23,7 @@ class VentasRoute {
           this.router.post("/det/", ventasController.agregaVentaDetalle);
           this.router.put("/det/:id", ventasController.actualizaVentaDetalle);
           // Funciones varias
+          this.router.get("/func/ventaslistado/", ventasController.listadoventascondetalle);
           this.router.get("/func/:id", ventasController.calculaTotalVenta);
      }
 }

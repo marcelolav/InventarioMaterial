@@ -116,5 +116,12 @@ class VentasController {
             res.status(404).json({ text: "No existe el comprobante referenciado!" });
         });
     }
+    // Para el listado de las ventas con toda la info
+    listadoventascondetalle(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const ventasdetalles = yield database_1.default.query("SELECT * FROM vw_ventascondetalles");
+            return res.json(ventasdetalles);
+        });
+    }
 }
 exports.ventasController = new VentasController();

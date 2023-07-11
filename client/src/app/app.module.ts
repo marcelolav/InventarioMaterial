@@ -22,6 +22,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 // Componentes generados
 import * as Component from './components';
 import * as Services from './services';
+import { VentasComponent } from './components/ventas/ventas.component';
+import { ListadoComponent } from './components/ventas/listado/listado.component';
 
 @NgModule({
 	declarations: [
@@ -39,6 +41,8 @@ import * as Services from './services';
 		Component.ProveedoresDisplayQueryComponent,
 		Component.ProveedoresListComponent,
 		Component.DialogSiNoComponent,
+  VentasComponent,
+  ListadoComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,
