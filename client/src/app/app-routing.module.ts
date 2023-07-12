@@ -14,6 +14,8 @@ import { RubrosAddModifyComponent } from './components/rubros/add-modify/add-mod
 import { ProveedoresListComponent } from './components/proveedores/list/list.component';
 import { ProveedoresDisplayQueryComponent } from './components/proveedores/display-query/display-query.component';
 import { ProveedoresAddModifyComponent } from './components/proveedores/add-modify/add-modify.component';
+import { ListadoVentasComponent } from './components/ventas/listado/listado.component';
+import { VentasComponent } from './components/ventas/ventas.component';
 
 const routes: Routes = [
 	{ path: 'home', component: HomeComponent },
@@ -32,6 +34,8 @@ const routes: Routes = [
 		path: 'proveedores/editar/:id',
 		component: ProveedoresAddModifyComponent,
 	},
+	{ path: 'ventas', component: VentasComponent },
+	{ path: 'ventas/listado', component: ListadoVentasComponent },
 	{ path: '', redirectTo: 'home', pathMatch: 'full' },
 	{ path: '**', component: ErrorComponent },
 ];

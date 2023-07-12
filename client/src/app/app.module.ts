@@ -19,11 +19,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { VentasComponent } from './components/ventas/ventas.component';
+import { ListadoVentasComponent } from './components/ventas/listado/listado.component';
 // Componentes generados
 import * as Component from './components';
 import * as Services from './services';
-import { VentasComponent } from './components/ventas/ventas.component';
-import { ListadoComponent } from './components/ventas/listado/listado.component';
 
 @NgModule({
 	declarations: [
@@ -41,8 +41,8 @@ import { ListadoComponent } from './components/ventas/listado/listado.component'
 		Component.ProveedoresDisplayQueryComponent,
 		Component.ProveedoresListComponent,
 		Component.DialogSiNoComponent,
-  VentasComponent,
-  ListadoComponent,
+		VentasComponent,
+		ListadoVentasComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,

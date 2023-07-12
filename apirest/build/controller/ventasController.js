@@ -19,7 +19,7 @@ class VentasController {
     // Muestra todos los datos de la tabla ventas cabecera
     listaVentasCabecera(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const ventascabecera = yield database_1.default.query("SELECT * FROM ventascabecera");
+            const ventascabecera = yield database_1.default.query("SELECT * FROM vw_ventascabecera_cliente");
             res.json(ventascabecera);
         });
     }
@@ -72,7 +72,7 @@ class VentasController {
     listaVentaDetalleComprobante(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const ventasdetalle = yield database_1.default.query("SELECT * FROM ventasdetalle WHERE comprobante_detalle= ?", [id]);
+            const ventasdetalle = yield database_1.default.query("SELECT * FROM vw_ventasdetalle2 WHERE comprobante_detalle= ?", [id]);
             if (ventasdetalle.length > 0) {
                 return res.json(ventasdetalle);
             }
@@ -119,7 +119,7 @@ class VentasController {
     // Para el listado de las ventas con toda la info
     listadoventascondetalle(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const ventasdetalles = yield database_1.default.query("SELECT * FROM vw_ventascondetalles");
+            const ventasdetalles = yield database_1.default.query("SELECT * FROM vw_ventasdetalle");
             return res.json(ventasdetalles);
         });
     }

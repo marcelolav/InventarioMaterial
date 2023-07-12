@@ -5,7 +5,7 @@
 		alt="Gual Street Home"
 	/>
 	<span class="title">Gual Street</span>
-	<button mat-button [matMenuTriggerFor]="menu">
+	<button mat-button [matMenuTriggerFor]="configuracion">
 		<mat-icon
 			aria-hidden="false"
 			aria-label="Example home icon"
@@ -13,7 +13,7 @@
 		></mat-icon>
 		Configuración
 	</button>
-	<mat-menu #menu="matMenu">
+	<mat-menu #configuracion="matMenu">
 		<button mat-menu-item [matMenuTriggerFor]="productos">
 			Productos
 		</button>
@@ -52,6 +52,25 @@
 			</button>
 			<button mat-menu-item routerLink="proveedoresquery">
 				Consulta a Proveedores
+			</button>
+		</mat-menu>
+	</mat-menu>
+	<button mat-button [matMenuTriggerFor]="menu_ventas">
+		<mat-icon
+			aria-hidden="false"
+			aria-label="Example home icon"
+			fontIcon="point_of_sale"
+		></mat-icon>
+		Ventas
+	</button>
+	<mat-menu #menu_ventas="matMenu">
+		<button mat-menu-item [matMenuTriggerFor]="ventas">Ventas</button>
+		<mat-menu #ventas="matMenu">
+			<button mat-menu-item routerLink="ventas">
+				Venta de Productos
+			</button>
+			<button mat-menu-item routerLink="ventas/listado">
+				Listado de Ventas
 			</button>
 		</mat-menu>
 	</mat-menu>

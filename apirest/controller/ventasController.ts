@@ -5,7 +5,7 @@ class VentasController {
      // VENTAS CABECERA
      // Muestra todos los datos de la tabla ventas cabecera
      public async listaVentasCabecera(req: Request, res: Response): Promise<void> {
-          const ventascabecera = await pool.query("SELECT * FROM ventascabecera");
+          const ventascabecera = await pool.query("SELECT * FROM vw_ventascabecera_cliente");
           res.json(ventascabecera);
      }
      // Muestra un solo registro de ventas cabecera por comprobante
@@ -48,7 +48,7 @@ class VentasController {
      // Obtiene los datos de ventasdetalle por numero de comprobante
      public async listaVentaDetalleComprobante(req: Request, res: Response): Promise<any> {
           const { id } = req.params;
-          const ventasdetalle = await pool.query("SELECT * FROM ventasdetalle WHERE comprobante_detalle= ?", [id]);
+          const ventasdetalle = await pool.query("SELECT * FROM vw_ventasdetalle2 WHERE comprobante_detalle= ?", [id]);
           if (ventasdetalle.length > 0) {
                return res.json(ventasdetalle);
           }
@@ -87,7 +87,7 @@ class VentasController {
      }
      // Para el listado de las ventas con toda la info
      public async listadoventascondetalle(req: Request, res: Response): Promise<any> {
-          const ventasdetalles = await pool.query("SELECT * FROM vw_ventascondetalles");
+          const ventasdetalles = await pool.query("SELECT * FROM vw_ventasdetalle");
           return res.json(ventasdetalles);
      }
 }
