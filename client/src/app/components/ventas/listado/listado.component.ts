@@ -25,10 +25,14 @@ export class ListadoVentasComponent implements OnInit, AfterViewInit {
 	dialogConfig = new MatDialogConfig();
 	@ViewChild(MatPaginator) paginator!: MatPaginator;
 	@ViewChild(MatSort, { static: true }) sort!: MatSort;
-	constructor(
-		private ventasServ: VentasService,
-		private dialog: MatDialog
-	) {}
+	constructor(private ventasServ: VentasService, private dialog: MatDialog) {
+		this.dialogConfig = {
+			maxWidth: '60vw',
+			maxHeight: '70vh',
+			height: '100%',
+			width: '100%',
+		};
+	}
 
 	ngOnInit(): void {
 		this.getVentas();
@@ -44,15 +48,17 @@ export class ListadoVentasComponent implements OnInit, AfterViewInit {
 		this.ventasServ.getVentasTotal().subscribe((res) => {
 			this.dataSource.data = res;
 			this.dataSource.sort = this.sort;
-			console.log(res);
 		});
 	}
-	verDetalle(comprobante: number, elemento: VentasListadoTotal) {
-		this.dialogConfig.data = elemento;
-		console.log('desde listadocomponent=> ', this.dialogConfig.data);
-		const dialogRef = this.dialog.open(
-			DialogoDetalleComprobante,
-			this.dialogConfig
-		);
+	verDetalle(comprobante: number) {
+		this.ventasServ
+			.getDetalleComprobante(comprobante)
+			.subscribe((res) => {
+				this.dialogConfig.data = res;
+				const dialogRef = this.dialog.open(
+					DialogoDetalleComprobante,
+					this.dialogConfig
+				);
+			});
 	}
 }

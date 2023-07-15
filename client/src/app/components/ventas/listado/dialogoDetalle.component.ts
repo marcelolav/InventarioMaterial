@@ -1,4 +1,9 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import {
+	Component,
+	Inject,
+	AfterViewInit,
+	ChangeDetectorRef,
+} from '@angular/core';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {
 	MAT_DIALOG_DATA,
@@ -34,9 +39,8 @@ import { MatTableDataSource } from '@angular/material/table';
 		MatTableModule,
 	],
 })
-export class DialogoDetalleComprobante implements OnInit {
-	ventaDetalle: VentasDetalleComprobante[] = [];
-	dataSource = new MatTableDataSource(this.ventaDetalle);
+export class DialogoDetalleComprobante implements AfterViewInit {
+	dataSource = new MatTableDataSource();
 	displayedColumns: string[] = [
 		'idproducto',
 		'nombreproducto',
@@ -44,27 +48,17 @@ export class DialogoDetalleComprobante implements OnInit {
 		'importe',
 		'subtotal',
 	];
-	comp: number = 0;
 	constructor(
 		public dialogRef: MatDialogRef<DialogoDetalleComprobante>,
-		public ventasService: VentasService,
-		@Inject(MAT_DIALOG_DATA) public data: VentasDetalleComprobante
-	) {
-		this.comp = data.comprobante_detalle;
-		console.log('Desde constructor de dialogo =>', this.comp);
-	}
-
-	ngOnInit(): void {
-		console.log(this.comp);
-		this.ventasService
-			.getDetalleComprobante(this.data.comprobante_detalle)
-			.subscribe((res) => {
-				this.ventaDetalle = res;
-				this.dataSource.data = res;
-				console.log(this.ventaDetalle);
-			});
-	}
+		@Inject(MAT_DIALOG_DATA) public data: [],
+		private cdref: ChangeDetectorRef
+	) {}
 	onNoClick(): void {
 		this.dialogRef.close();
+	}
+
+	ngAfterViewInit() {
+		this.dataSource.data = this.data;
+		this.cdref.detectChanges();
 	}
 }

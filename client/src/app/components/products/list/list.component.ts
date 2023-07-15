@@ -114,7 +114,6 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 			this.dialogConfig
 		);
 		dialogRef.afterClosed().subscribe((result) => {
-			console.log('Desde listcomponent=>', result);
 			this.getproducts();
 		});
 	}

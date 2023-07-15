@@ -33,7 +33,6 @@ export class ProveedoresDisplayQueryComponent implements OnInit, AfterViewInit {
 		this.provserv.getProveedores().subscribe((res) => {
 			this.dataSource.data = res;
 			this.dataSource.sort = this.sort;
-			console.log(this.dataSource.data);
 		});
 	}
 	applyFilter(event: Event) {

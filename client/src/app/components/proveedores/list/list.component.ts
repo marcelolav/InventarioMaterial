@@ -67,7 +67,6 @@ export class ProveedoresListComponent implements OnInit, AfterViewInit {
 		const fechacambiada = new Date(elemento.fechaultimacompra);
 
 		elemento.fechaultimacompra = fechacambiada;
-		console.log(elemento.fechaultimacompra);
 
 		this.dialogConfig.data = elemento;
 		this.dialogConfig.data.fechaultimacompra = fechacambiada;

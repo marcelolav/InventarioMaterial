@@ -35,14 +35,11 @@ class ProductosController {
 
      // Agrega un producto
      public async agregaProducto(req: Request, res: Response): Promise<void> {
-          console.log("Entra en agregar nuevo producto");
-
           const result = await pool.query("INSERT INTO productos set ?", [req.body]);
           res.json({ message: "Producto guardado con éxito!" });
      }
      // Actualiza un producto por numero de id
      public async actualizaProducto(req: Request, res: Response): Promise<void> {
-          console.log("entra en actualzar");
           const { id } = req.params;
           await pool.query("UPDATE productos set ? WHERE idproductos = ?", [req.body, id]);
           res.json({ message: "El producto ha sido actualizado con éxito!" });

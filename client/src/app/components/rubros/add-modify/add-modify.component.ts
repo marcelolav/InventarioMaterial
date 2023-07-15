@@ -42,7 +42,6 @@ export class RubrosAddModifyComponent implements OnInit {
 	ngOnInit(): void {
 		this.rubserv.getRubros().subscribe((rubros) => {
 			this.listaRubros = rubros;
-			console.log(this.listaRubros);
 		});
 	}
 	onNoClick(): void {
@@ -53,13 +52,9 @@ export class RubrosAddModifyComponent implements OnInit {
 		if (rubro.idrubros !== undefined) {
 			this.rubserv
 				.updateRubro(rubro.idrubros, rubro)
-				.subscribe((res) => {
-					console.log(res);
-				});
+				.subscribe((res) => {});
 		} else {
-			this.rubserv.addRubro(rubro).subscribe((res) => {
-				console.log(res);
-			});
+			this.rubserv.addRubro(rubro).subscribe((res) => {});
 		}
 	}
 }

@@ -42,17 +42,11 @@ export class ClientAddModifyComponent {
 	}
 	guardarDatos(cliente: Cliente) {
 		if (cliente.idclientes !== undefined) {
-			console.log('es modificacion');
 			this.cliserv
 				.updateCliente(cliente.idclientes, cliente)
-				.subscribe((res) => {
-					console.log(res);
-				});
+				.subscribe((res) => {});
 		} else {
-			console.log('Es alta!!!');
-			this.cliserv.addCliente(cliente).subscribe((res) => {
-				console.log(res);
-			});
+			this.cliserv.addCliente(cliente).subscribe((res) => {});
 		}
 	}
 }

@@ -44,13 +44,9 @@ export class ProveedoresAddModifyComponent {
 		if (proveedor.idproveedores !== undefined) {
 			this.provserv
 				.updateProveedor(proveedor.idproveedores, proveedor)
-				.subscribe((res) => {
-					console.log(res);
-				});
+				.subscribe((res) => {});
 		} else {
-			this.provserv.addProveedor(proveedor).subscribe((res) => {
-				console.log(res);
-			});
+			this.provserv.addProveedor(proveedor).subscribe((res) => {});
 		}
 	}
 }

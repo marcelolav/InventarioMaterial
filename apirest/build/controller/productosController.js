@@ -54,7 +54,6 @@ class ProductosController {
     // Agrega un producto
     agregaProducto(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log("Entra en agregar nuevo producto");
             const result = yield database_1.default.query("INSERT INTO productos set ?", [req.body]);
             res.json({ message: "Producto guardado con éxito!" });
         });
@@ -62,7 +61,6 @@ class ProductosController {
     // Actualiza un producto por numero de id
     actualizaProducto(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log("entra en actualzar");
             const { id } = req.params;
             yield database_1.default.query("UPDATE productos set ? WHERE idproductos = ?", [req.body, id]);
             res.json({ message: "El producto ha sido actualizado con éxito!" });

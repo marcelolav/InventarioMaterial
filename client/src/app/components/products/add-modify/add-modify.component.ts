@@ -44,7 +44,6 @@ export class ProductAddModifyComponent implements OnInit {
 	ngOnInit() {
 		this.rubserv.getRubros().subscribe((rubros) => {
 			this.listaRubros = rubros;
-			console.log(this.listaRubros);
 		});
 	}
 
@@ -54,17 +53,11 @@ export class ProductAddModifyComponent implements OnInit {
 
 	guardarDatos(producto: Producto) {
 		if (producto.idproductos !== undefined) {
-			console.log('es modificacion');
 			this.prodserv
 				.updateProduct(producto.idproductos, producto)
-				.subscribe((res) => {
-					console.log(res);
-				});
+				.subscribe((res) => {});
 		} else {
-			console.log('Es alta!!!');
-			this.prodserv.addProduct(producto).subscribe((res) => {
-				console.log(res);
-			});
+			this.prodserv.addProduct(producto).subscribe((res) => {});
 		}
 	}
 }
