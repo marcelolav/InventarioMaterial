@@ -24,6 +24,10 @@ import { ListadoVentasComponent } from './components/ventas/listado/listado.comp
 // Componentes generados
 import * as Component from './components';
 import * as Services from './services';
+import { TableComponent } from './components/shared/table/table.component';
+import { ColumnValuePipe } from './pipes/table-pipe.pipe';
+import { ComprasComponent } from './components/compras/compras.component';
+import { ListadoComponent } from './components/compras/listado/listado.component';
 
 @NgModule({
 	declarations: [
@@ -43,6 +47,10 @@ import * as Services from './services';
 		Component.DialogSiNoComponent,
 		VentasComponent,
 		ListadoVentasComponent,
+		TableComponent,
+		ColumnValuePipe,
+  ComprasComponent,
+  ListadoComponent,
 	],
 	imports: [
 		BrowserAnimationsModule,

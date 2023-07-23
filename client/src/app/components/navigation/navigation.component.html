@@ -74,4 +74,24 @@
 			</button>
 		</mat-menu>
 	</mat-menu>
+
+	<button mat-button [matMenuTriggerFor]="menu_compras">
+		<mat-icon
+			aria-hidden="false"
+			aria-label="Example home icon"
+			fontIcon="point_of_sale"
+		></mat-icon>
+		Compras
+	</button>
+	<mat-menu #menu_compras="matMenu">
+		<button mat-menu-item [matMenuTriggerFor]="compras">Compras</button>
+		<mat-menu #compras="matMenu">
+			<button mat-menu-item routerLink="compras">
+				Compra de Productos
+			</button>
+			<button mat-menu-item routerLink="compras/listado">
+				Listado de Compras
+			</button>
+		</mat-menu>
+	</mat-menu>
 </mat-toolbar>
