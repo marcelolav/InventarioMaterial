@@ -18,7 +18,10 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 		'codigobarra',
 		'nombreproducto',
 		'descripcion',
-		'precio',
+		'precioventa',
+		'precioventausd',
+		'preciocompra',
+		'preciocomprausd',
 		'existencia',
 		'acciones',
 	];
@@ -39,10 +42,12 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 			codigobarra: '',
 			nombreproducto: '',
 			descripcion: '',
-			precio: 0,
+			precioventa: 0,
+			precioventausd: 0,
 			preciocompra: 0,
+			preciocomprausd: 0,
 			existencia: 0,
-			preciorefdolar: 0,
+			minimo: 0,
 			rubroid: 0,
 		};
 		this.dialogConfig = {

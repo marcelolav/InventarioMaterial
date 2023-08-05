@@ -51,10 +51,39 @@
 			</td>
 		</ng-container>
 
-		<ng-container matColumnDef="precio">
-			<th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
-			<td mat-cell *matCellDef="let element">{{ element.precio }}</td>
+		<ng-container matColumnDef="precioventa">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>
+				Venta $
+			</th>
+			<td mat-cell *matCellDef="let element">
+				{{ element.precioventa }}
+			</td>
 		</ng-container>
+		<ng-container matColumnDef="precioventausd">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>
+				Venta U$D
+			</th>
+			<td mat-cell *matCellDef="let element">
+				{{ element.precioventausd }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="preciocompra">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>
+				Compra $
+			</th>
+			<td mat-cell *matCellDef="let element">
+				{{ element.preciocompra }}
+			</td>
+		</ng-container>
+		<ng-container matColumnDef="preciocomprausd">
+			<th mat-header-cell *matHeaderCellDef mat-sort-header>
+				Compra U$D
+			</th>
+			<td mat-cell *matCellDef="let element">
+				{{ element.preciocomprausd }}
+			</td>
+		</ng-container>
+
 		<ng-container matColumnDef="existencia">
 			<th mat-header-cell *matHeaderCellDef mat-sort-header>
 				Existencia

@@ -3,22 +3,24 @@ export interface Producto {
 	codigobarra: string;
 	nombreproducto: string;
 	descripcion: string;
-	precio: number;
+	precioventa: number;
+	precioventausd: number;
 	preciocompra: number;
+	preciocomprausd: number;
 	existencia: number;
-	preciorefdolar: number;
+	minimo: number;
 	rubroid: number;
 }
 
-export interface ProductoCompleto {
-	idproductos?: number;
-	codigobarra: string;
-	nombreproducto: string;
-	descripcion: string;
-	precio: number;
-	preciocompra: number;
-	existencia: number;
-	preciorefdolar: number;
-	rubroid: number;
-	nombrerubro: string;
-}
+// export interface ProductoCompleto {
+// 	idproductos?: number;
+// 	codigobarra: string;
+// 	nombreproducto: string;
+// 	descripcion: string;
+// 	precio: number;
+// 	preciocompra: number;
+// 	existencia: number;
+// 	preciorefdolar: number;
+// 	rubroid: number;
+// 	nombrerubro: string;
+// }
