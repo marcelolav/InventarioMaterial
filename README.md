@@ -1,27 +1,31 @@
-# Client
+# InventarioMaterial V.2.0
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+Este proyecto funciona en conjunto con APINEST por lo que es requerido, en este mismo github puede obtener una copia del mismo para desarrollar.
 
-## Development server
+El proyecto consiste en un control de inventario con modulos de stock, productos, compras y ventas. En el caso de los productos también hay submodulos como el Rubro y varias consultas que se obtienen directamente del API/REST mencionado anteriormente, se recuerda que SE DEBE ejecutar el APINEST para que funcione esta aplicación.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Despliegue para desarrollo
 
-## Code scaffolding
+Ejecute `ng serve` para crear el servidor de desarrollo. Luego de iniciado navegue hacia `http://localhost:4200/`. La aplicación recarga de forma automática cada modificación que realice.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Generación de código adicional
 
-## Build
+Ejecute: <br>
+`ng generate component component-name` para generar un nuevo componente.
+`ng generate directive|pipe|service|class|guard|interface|enum|module` para las demás opciones.
+<br>
+En caso de necesidad recurra a la ayuda de CLI de Angular `https://angular.io/cli`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Creación para despliegue en servidor
 
-## Running unit tests
+Ejecute `ng build` para traspilar el proyecto y obtener el código para desplegar en servidores que será almacenado en la carpeta `dist/`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Ejecución de Test unitarios y end to end
 
-## Running end-to-end tests
+No se encuentran disponibles los testeos para este proyecto. Si lo desea consulte la documentación de Angular para construir las pruebas desde cero en la página: `https://angular.io/guide/testing`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contacto y ayuda sobre el proyecto
 
-## Further help
+Para ayuda sobre Angular CLI utilice el comando `ng help` o verifique la documentación en [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+En caso de desar contactar con el desarrollador el mail es: [Marcelo Lavandeira](mailto:marcelo.lavandeira@gmail.com)
