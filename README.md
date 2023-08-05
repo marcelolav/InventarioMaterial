@@ -1,51 +1,27 @@
-# <center>Sistema de Inventario y Ventas</center>
+# Client
 
-## Basado en NodeJs y Angular con base de datos MySQL
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
 
+## Development server
 
-### Configuración:
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Para desarrollo se debe crear un archivo dentro de keys/keys.ts con el siguiente formato:
+## Code scaffolding
 
-```
-export default {
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-    database: {
-        host: 'el host donde se aloja la base de datos',
-        user: 'usuario de la base de datos',
-        password: 'password del usuario de la base de datos',
-        database: 'nombre de la base de datos'
-    } 
-}
+## Build
 
-```
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-En todos los casos se debe modificar con los datos personales de cada sistema en particular.
+## Running unit tests
 
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Luego para hacer uso del sistema se debe realizar la instalación de las dependencias del proyecto las cuales se realizan con los siguientes comandos:
+## Running end-to-end tests
 
-```
-cd apirest
-npm install
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-cd ..
-cd client 
-npm install
+## Further help
 
-```
-
-Para ello se dispone de un script que tiene esta función especifica pero se debe ejecutar solo una vez.
-
-Para correr el proyecto en modalidad desarrollo el comando a utilizar desde la linea de comandos es:
-
-```
-cd /inventarioMaterial
-iniciar
-```
-
-NOTA:  Puede que en algunos sistemas operativos se deba ejecutar en una ventana de CMD en lugar de usar powerShell de windows.  Este es un problema a resolver en un futuro mientras tanto se recomienda ejecutar este comando desde una linea de comandos de CMD y de ser posible en modo administrador.
-
-## <center>Para cualquier sugerencia utilizar el siguiente correo electrónico:</center>
-
-## <center>marcelo.lavandeira@gmail.com</center>
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

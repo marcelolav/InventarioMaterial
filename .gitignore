@@ -8,13 +8,9 @@
 
 # Node
 /node_modules
-/apirest/node_modules
-/client/node_modules
 npm-debug.log
 yarn-error.log
 
-# Keys y otras cosas que no deben ir a github
-/apirest/keys
 # IDEs and editors
 .idea/
 .project
