@@ -36,7 +36,7 @@ export class ProductDisplayQueryComponent implements OnInit, AfterViewInit {
 		this.dataSource.paginator = this.paginator;
 	}
 	getproducts() {
-		this.productsService.getProducts().subscribe((res) => {
+		this.productsService.getProductList().subscribe((res) => {
 			this.dataSource.data = res;
 			this.dataSource.sort = this.sort;
 		});

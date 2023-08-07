@@ -10,17 +10,16 @@ export interface Producto {
 	existencia: number;
 	minimo: number;
 	rubroid: number;
+	fotorproducto?: string;
+	rubro?: [];
 }
-
-// export interface ProductoCompleto {
-// 	idproductos?: number;
-// 	codigobarra: string;
-// 	nombreproducto: string;
-// 	descripcion: string;
-// 	precio: number;
-// 	preciocompra: number;
-// 	existencia: number;
-// 	preciorefdolar: number;
-// 	rubroid: number;
-// 	nombrerubro: string;
-// }
+export interface ProductoListaPrecios {
+	idproductos: number;
+	codigobarra: string;
+	nombreproducto: string;
+	precioventa: number;
+	precioventausd: number;
+	existencia: number;
+	minimo: number;
+	nombrerubro: string;
+}

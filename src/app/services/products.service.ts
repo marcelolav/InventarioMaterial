@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Producto } from '../models/producto';
+import { Producto, ProductoListaPrecios } from '../models/producto';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -19,11 +19,9 @@ export class ProductsService {
 		return this.http.get<Producto>(this.APIURL + '/' + id);
 	}
 
-	// getProductComplete(): Observable<ProductoCompleto[]> {
-	// 	return this.http.get<ProductoCompleto[]>(
-	// 		this.APIURL + '/listacompleta/'
-	// 	);
-	// }
+	getProductList(): Observable<ProductoListaPrecios[]> {
+		return this.http.get<ProductoListaPrecios[]>(this.APIURL + '/lp/');
+	}
 	deleteProduct(idproductos: number): Observable<any> {
 		return this.http.delete(this.APIURL + '/' + idproductos);
 	}
